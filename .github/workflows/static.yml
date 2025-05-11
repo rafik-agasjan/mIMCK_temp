@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         with:
           # Upload entire repository
-          path: '.168.231.82.232'
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
