@@ -11,9 +11,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Push to Server
-        run: |
-          git remote add server ssh://root@imck-med.org/opt/git/imck.git
-          git push --force server HEAD:main
-        env:
-          GIT_SSH_COMMAND: "ssh -i ${{ secrets.SSH_PRIVATE_KEY }} -o StrictHostKeyChecking=no"
+          run: |
+            git remote add server https://imck-med.org/opt/git/imck.git
+            git push --force server HEAD:main
+          env:
+            GIT_HTTP_USERNAME: ${{ secrets.GIT_USERNAME }}
+            GIT_HTTP_PASSWORD: ${{ secrets.GIT_PASSWORD }}
