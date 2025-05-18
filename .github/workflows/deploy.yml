@@ -17,9 +17,9 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Push to Server
-          run: |
-            git remote add server https://imck-med.org/opt/git/imck.git
-            git push --force server HEAD:main
-          env:
-            GIT_HTTP_USERNAME: ${{ secrets.GIT_USERNAME }}
-            GIT_HTTP_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+        run: |
+          git remote add server https://imck-med.org/opt/git/imck.git
+          git push --force server HEAD:main
+        env:
+          GIT_HTTP_USERNAME: ${{ secrets.GIT_USERNAME }}
+          GIT_HTTP_PASSWORD: ${{ secrets.GIT_PASSWORD }}
