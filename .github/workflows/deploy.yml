@@ -18,7 +18,7 @@ jobs:
 
       - name: Push to Server
         run: |
-          git remote add server https://www.imck-med.org/opt/git/imck.git
+          git remote add server https://imck-med.org/opt/git/imck.git
           git push --force server HEAD:main
         env:
           GIT_HTTP_USERNAME: ${{ secrets.GIT_USERNAME }}
