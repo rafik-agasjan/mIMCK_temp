@@ -16,10 +16,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Push to Server
+      - name: Deploy to Server
         run: |
-          git remote add server https://imck-med.org/opt/git/imck.git
-          git push --force server HEAD:main
-        env:
-          GIT_HTTP_USERNAME: ${{ secrets.GIT_USERNAME }}
-          GIT_HTTP_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+          SERVER_IP=${{ secrets.SERVER_IP }}
+          SERVER_USER=${{ secrets.SERVER_USER }}
+          DEPLOYMENT_PATH=/var/www/
+
+          rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./"$DEPLOYMENT_PATH" "$SERVER_USER@$SERVER_IP:$DEPLOYMENT_PATH"

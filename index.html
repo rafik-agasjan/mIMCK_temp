@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-  <!--
-  <head> contains metadata about the document, including links to stylesheets
-  and scripts. It is the first element inside the <html> element and does not
-  display any content itself. It is used by browsers and search engines to
-  understand the structure and content of the page.
-  -->
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -41,7 +35,7 @@
 
   <header id="header" class="header sticky-top">
 
-    <div class="topbar d-flex align-items-center" id="mefedronovõe polja">
+    <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
           <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com" data-key="topbar_email"></a></i>
@@ -57,7 +51,7 @@
           <img id="current-flag" src="https://flagcdn.com/w40/gb.png" alt="Lang flag" />
           <select id="language-select" aria-label="Language selection" onchange="changeLanguage(this)">
               <option value="en" data-flag="gb">Eng</option>
-              <option value="fr" data-flag="fr">Fra</option> 
+              <option value="fr" data-flag="fr">Fra</option>
           </select>
         </div>
       </div>
@@ -365,23 +359,19 @@
               <input type="datetime-local" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required="">
             </div>
             <div class="col-md-4 form-group mt-3">
-              <select name="department" id="department" class="form-select" required="" data-component-name="<select />">
+              <select name="department" id="department" class="form-select" required="">
                 <option value="" data-key="form_placeholder_department"></option>
-                <option value="Cardiologie" data-key="form_department_1"></option>
-                <option value="Pédiatrie" data-key="form_department_2"></option>
-                <option value="Neurologie" data-key="form_department_3"></option>
-                <option value="Orthopédie" data-key="form_department_4"></option>
-                <option value="Ophtalmologie" data-key="form_department_5"></option>
+                <option value="Department 1" data-key="form_department_1"></option>
+                <option value="Department 2" data-key="form_department_2"></option>
+                <option value="Department 3" data-key="form_department_3"></option>
               </select>
             </div>
             <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select" required="" data-component-name="<select />">
+              <select name="doctor" id="doctor" class="form-select" required="">
                 <option value="" data-key="form_placeholder_doctor"></option>
-                <option value="Dr. Jean Dupont" data-key="form_doctor_1"></option>
-                <option value="Dr. Marie Lefevre" data-key="form_doctor_2"></option>
-                <option value="Dr. Paul Moreau" data-key="form_doctor_3"></option>
-                <option value="Dr. Claire Bernard" data-key="form_doctor_4"></option>
-                <option value="Dr. Luc Martin" data-key="form_doctor_5"></option>
+                <option value="Doctor 1" data-key="form_doctor_1"></option>
+                <option value="Doctor 2" data-key="form_doctor_2"></option>
+                <option value="Doctor 3" data-key="form_doctor_3"></option>
               </select>
             </div>
           </div>

@@ -119,29 +119,8 @@
    */
   document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
     faqItem.addEventListener('click', () => {
-      // Close all FAQ items
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('faq-active');
-        const content = item.querySelector('.faq-content');
-        if (content) {
-          content.style.maxHeight = null;
-        }
-      });
-      // Open the clicked FAQ item
-      const parent = faqItem.parentNode;
-      parent.classList.add('faq-active');
-      const content = parent.querySelector('.faq-content');
-      if (content) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      }
+      faqItem.parentNode.classList.toggle('faq-active');
     });
-  });
-  // On page load, set maxHeight for active FAQ
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const content = item.querySelector('.faq-content');
-    if (item.classList.contains('faq-active') && content) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-    }
   });
 
   /**

@@ -25,32 +25,6 @@ function applyTranslations() {
                 element.textContent = translations[key];
             }
         });
-    // Re-initialize FAQ accordion after translations
-    initFaqAccordion();
-}
-
-function initFaqAccordion() {
-    document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
-        faqItem.onclick = null;
-        faqItem.addEventListener('click', () => {
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('faq-active');
-                const content = item.querySelector('.faq-content');
-                if (content) content.style.maxHeight = null;
-            });
-            const parent = faqItem.parentNode;
-            parent.classList.add('faq-active');
-            const content = parent.querySelector('.faq-content');
-            if (content) content.style.maxHeight = content.scrollHeight + 'px';
-        });
-    });
-    // Set maxHeight for active FAQ on load
-    document.querySelectorAll('.faq-item').forEach(item => {
-        const content = item.querySelector('.faq-content');
-        if (item.classList.contains('faq-active') && content) {
-            content.style.maxHeight = content.scrollHeight + 'px';
-        }
-    });
 }
 
 function setLanguage(lang) {

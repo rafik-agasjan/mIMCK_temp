@@ -14,7 +14,7 @@
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Poppins",  sans-serif;
-
+  --nav-font: "Raleway",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -53,11 +53,6 @@
 }
 
 /* Smooth scroll */
-/**
- * Enables smooth scrolling for the entire website. This style is applied to
- * the root element, which is the highest level element in the HTML document.
- * https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
- */
 :root {
   scroll-behavior: smooth;
 }
@@ -1471,9 +1466,9 @@ section,
 }
 
 .faq .faq-container .faq-item .faq-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
@@ -1509,7 +1504,7 @@ section,
 }
 
 .faq .faq-container .faq-active .faq-content {
-  max-height: 500px;
+  grid-template-rows: 1fr;
   visibility: visible;
   opacity: 1;
   padding-top: 10px;

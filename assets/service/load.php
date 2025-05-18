@@ -1,4 +1,4 @@
-+<?php
+<?php
 
 $file = '../dock/TPD-FX_Medical_Evacuation_Dossier.pdf';
 $verifyFile = '../dock/verify';

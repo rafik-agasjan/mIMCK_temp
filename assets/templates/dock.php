@@ -8,7 +8,7 @@ if (!isset($_GET['hash']) || strpos($_GET['hash'], $expectedToken) === false) {
   exit;
 } else {
   echo '
-  <!-- Page Title --> 
+  <!-- Page Title -->
       <div class="page-title" data-aos="fade">
         <nav class="breadcrumbs">
           <div class="container">
