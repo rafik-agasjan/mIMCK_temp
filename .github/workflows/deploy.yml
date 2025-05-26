@@ -20,15 +20,10 @@ jobs:
           port: ${{ secrets.SSH_PORT || 22 }} # SSH port, vaikimisi 22
           script: |
             echo "Connecting to server..."
-            cd /var/www/mIMCK_temp
+            cd ~/var/www/mIMCK_temp
             echo "Pulling latest changes from Git..."
             git pull
             echo "Git pull complete."
-            # Siia võid lisada muid käske, mida pärast pull'i vaja teha
-            # Näiteks:
-            # sudo systemctl restart my-app.service
-            # npm install
-            # php artisan migrate
             pnpm build
             echo "mIMCK_temp build complete"
             pnpm start
