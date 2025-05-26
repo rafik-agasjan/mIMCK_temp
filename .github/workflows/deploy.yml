@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: SSH into server and pull changes
-        uses: appleboy/ssh-action@master # Populaarne action SSH käskude jaoks
+        uses: rafik-agasjan/ssh-action@master # Kasutab sinu fork'itud versiooni
         with:
           host: ${{ secrets.SERVER_HOST }} # Sinu serveri IP või domeeninimi
           username: ${{ secrets.SERVER_USERNAME }} # Kasutajanimi serveris
