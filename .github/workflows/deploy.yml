@@ -19,12 +19,12 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }} # Privaatne SSH võti
           port: ${{ secrets.SSH_PORT || 22 }} # SSH port, vaikimisi 22
           script: |
+            set -e
             echo "Connecting to server..."
             cd /var/www/mIMCK_temp
             echo "Pulling latest changes from Git..."
             git pull
             echo "Git pull complete."
-            pnpm build
-            echo "mIMCK_temp build complete"
-            pnpm start
-            echo "mIMCK_temp build started"
+            sudo systemctl reload php8.1-fpm
+            echo "Deployment finished successfully."
+
