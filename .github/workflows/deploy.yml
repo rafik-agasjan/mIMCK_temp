@@ -25,6 +25,6 @@ jobs:
             echo "Pulling latest changes from Git..."
             git pull
             echo "Git pull complete."
-            sudo systemctl reload php8.1-fpm
+            systemctl reload php8.1-fpm
             echo "Deployment finished successfully."
 
