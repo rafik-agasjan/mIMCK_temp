@@ -20,7 +20,7 @@ jobs:
           port: ${{ secrets.SSH_PORT || 22 }} # SSH port, vaikimisi 22
           script: |
             echo "Connecting to server..."
-            cd /var/www/html/sinu-projekt # ASENDA SEE OMA PROJEKTI TEGELIKU ASUKOHAGA SERVERIS
+            cd /var/www/mIMCK_temp
             echo "Pulling latest changes from Git..."
             git pull
             echo "Git pull complete."
@@ -29,3 +29,7 @@ jobs:
             # sudo systemctl restart my-app.service
             # npm install
             # php artisan migrate
+            pnpm build
+            echo "mIMCK_temp build complete"
+            pnpm start
+            echo "mIMCK_temp build started"
